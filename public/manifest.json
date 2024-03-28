@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "치지직 표시기",
+    "version": "0.0.1",
+    "description": "누가 방송하는지 알려줌",
+    "permissions": [
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "index.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "host_permissions": [
+        "https://api.chzzk.naver.com/"
+    ]
+}
