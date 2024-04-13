@@ -19,7 +19,7 @@ function Profile({ image, name, isLive, channelId }) {
 function App() {
   const [data, setData] = useState("");
 
-  (async () => {
+  useEffect(async () => {
     await new Promise(() => {
       chrome.runtime.sendMessage("request", (response) => {
         setData(response.map(item =>
@@ -27,7 +27,7 @@ function App() {
         ));
       })
     })
-  })()
+  }, [])
 
   return (
     <div className=" bg-black flex flex-row">
